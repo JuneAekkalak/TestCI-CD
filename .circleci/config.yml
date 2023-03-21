@@ -58,13 +58,13 @@ workflows:
   build-test-and-deploy:
     jobs:
       - build-and-test:
-          context: TestCI-CD
+          context: TestCICD
           filters:
             branches:
               only:
                 - master
       - deploy-dev:
-          context: TestCI-CD
+          context: TestCICD
           requires:
             - build-and-test
           filters:
