@@ -49,25 +49,25 @@ jobs:
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
       - run:
           name: Upload to S3
-          command: aws s3 cp function.zip s3://aekkalak/function.zip
+          command: aws s3 cp function.zip s3://testcdci/function.zip
       - run:
           name: Deploy new Lambda
-          command: aws lambda update-function-code --function-name fastapi --s3-bucket aekkalak --s3-key function.zip
+          command: aws lambda update-function-code --function-name test --s3-bucket testcdci --s3-key function.zip
 
 workflows:
   build-test-and-deploy:
     jobs:
       - build-and-test:
-          context: aws_lab10
+          context: TestCICD
           filters:
             branches:
               only:
-                - main
+                - master
       - deploy-dev:
-          context: aws_lab10
+          context: TestCICD
           requires:
             - build-and-test
           filters:
             branches:
               only:
-                - main
+                - master
