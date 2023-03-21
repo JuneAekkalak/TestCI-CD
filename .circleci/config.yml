@@ -52,7 +52,7 @@ jobs:
           command: aws s3 cp function.zip s3://testcdci/function.zip
       - run:
           name: Deploy new Lambda
-          command: aws lambda update-function-code --function-name testcdci --s3-bucket testcdci --s3-key function.zip
+          command: aws lambda update-function-code --function-name test --s3-bucket testcdci --s3-key function.zip
 
 workflows:
   build-test-and-deploy:
