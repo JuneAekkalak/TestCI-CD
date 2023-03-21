@@ -58,16 +58,16 @@ workflows:
   build-test-and-deploy:
     jobs:
       - build-and-test:
-          context: aws_lab10
+          context: TestCI-CD
           filters:
             branches:
               only:
-                - main
+                - master
       - deploy-dev:
-          context: aws_lab10
+          context: TestCI-CD
           requires:
             - build-and-test
           filters:
             branches:
               only:
-                - main
+                - master
