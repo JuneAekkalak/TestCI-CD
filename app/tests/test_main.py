@@ -11,6 +11,6 @@ def test_read_main():
     assert response.json() == {"Hello": "World1"}
 
 def test_read_main():
-    response = client.get("/hello/june")
+    response = client.get("/callname/june")
     assert response.status_code == 200
-    assert response.json() == {"Hello": "june"}
+    assert response.json() == {"hello": "june"}
