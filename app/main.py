@@ -9,12 +9,13 @@ def read_root():
 
 @app.get("/callname/{name}")
 def read_name(name: str = None):
+    global names 
+    names = name
     return {"hello": name}
 
 @app.post("/callname")
-async def post_name():
-    name = "june"
-    return {"hello": name}
+def post_name():
+    return {"hello": names}
 
 
 handler = Mangum(app)
