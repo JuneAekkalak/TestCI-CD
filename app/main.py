@@ -17,7 +17,7 @@ def read_root():
 
 @app.get("/callname/{name}")
 def read_name(name: str = None):
-    return {"hello": {name}}
+    return {"hello": name}
 
 
 handler = Mangum(app)
