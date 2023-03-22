@@ -12,7 +12,7 @@ def read_name(name: str = None):
     return {"hello": name}
 
 @app.post("/callname")
-def post_name():
+async def post_name():
     name = "june"
     return {"hello": name}
 
