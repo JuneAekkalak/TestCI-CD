@@ -11,7 +11,7 @@ def read_root():
 def read_name(name: str = None):
     return {"hello": name}
 
-@app.route("/callname", methods=["POST", "GET"])
+@app.post("/callname")
 async def post_name():
     name = "june"
     return {"hello": name}
