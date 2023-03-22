@@ -15,8 +15,15 @@ def read_root():
 # def read_name(name: str = None):
 #     return {"Hello": name}
 
+
+
 @app.get("/callname/{name}")
 def read_name(name: str = None):
+    return {"hello": name}
+
+@app.post("/callname/")
+def post_name():
+    name = "june"
     return {"hello": name}
 
 
