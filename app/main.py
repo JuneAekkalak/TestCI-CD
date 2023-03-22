@@ -23,7 +23,7 @@ def read_name(name: str = None):
 
 @app.post("/callname/")
 def post_name():
-    name = "june"
+    name = "aaa"
     return {"hello": name}
 
 

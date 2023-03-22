@@ -18,4 +18,4 @@ def test_get_main():
 def test_post_main():
     response = client.post("/callname/")
     assert response.status_code == 200
-    assert response.json() == {'hello': 'june'}
+    assert response.json() == {'hello': 'aaa'}
